@@ -1,0 +1,149 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-secondary);
+  transition: 0.4s;
+  font-size: 20px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(168, 100%, 1%, 0.2);
+  }
+}
+
+/* @media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+} */
+
+@font-face {
+  font-family: 'Raleway', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+}
+
+:root {
+  --clr-text: #ffffff;
+  --clr-primary: #8366f8;
+  --clr-secondary: #f0f0f0;
+
+  --ff-title: ;
+  --ff-sans: 'Raleway', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: var(--ff-sans);
+  line-height: 1.2;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+h2, h3 {
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: 0.85em;
+}
+
+.btn-group {
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: .75em 2.5em;
+  background-color: #000000;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.5em 0;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: var(--clr-text);
+  border-radius: 0.5em;
+  box-shadow: 0 4px 0 0px rgba(0,0,0,0.2);
+}
+
+.btn + .btn {
+  margin-left: 5em;
+}
+
+.navigation {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: var(--clr-primary);
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 999;
+}
+
+.navLink {
+    float: left;
+}
+
+.navLink a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navLink a:hover:not(.active) {
+background-color: #363534;
+}
+
+.active {
+    background-color: var(--clr-primary);
+}
+
+.navName {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.section-title {
+  margin: 2em 0 2em 0;
+  text-align: center;
+}
