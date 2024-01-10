@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
+import PageFooter from './components/PageFooter.vue';
 import Navbar from './components/Navbar.vue';
 </script>
 
@@ -11,14 +12,18 @@ import Navbar from './components/Navbar.vue';
     logoPath=""
     />
   </header>
-
   <RouterView />
+  <PageFooter 
+  v-if="['home', '404'].indexOf($route.name) < 0"
+    siteTitle="Brady Zalasky"
+    logoPath=""
+  />
 </template>
 
 <style scoped>
 header {
   line-height: 1.5;
-  max-height: 100vh;
+  max-height: 10;
 }
 
 .logo {

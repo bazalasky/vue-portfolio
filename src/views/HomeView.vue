@@ -13,6 +13,10 @@
                   <a href="/connect" class="btn btn-primary">Connect</a>
               </div>
           </nav>
+          <div class="social-container">
+            <a href="https://www.instagram.com/brady_zalasky/"><font-awesome-icon icon="fa-brands fa-instagram" size="2xl" style="color: #000000;"/></a>
+            <a href="https://www.linkedin.com/in/brady-zalasky-00537514a/"><font-awesome-icon icon="fa-brands fa-linkedin" size="2xl" style="color: #000000;" /></a>
+          </div>
       </section>
 </template>
 
@@ -59,5 +63,13 @@
 
   .call-to-action:hover {
     background-color: hsla(168, 100%, 1%, 0.2);
+  }
+
+  .social-container {
+    margin-top: 5em;
+  }
+
+  .social-container > a {
+    margin: 0 1em 0 0;
   }
 </style>
