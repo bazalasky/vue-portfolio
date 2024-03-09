@@ -1,16 +1,13 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-
   font-weight: normal;
+  background-color: var(--clr-background);
 }
 
 a {
   text-decoration: none;
-  color: var(--clr-secondary);
   transition: 0.4s;
   font-size: 20px;
 }
@@ -35,17 +32,18 @@ a {
 } */
 
 @font-face {
-  font-family: 'Raleway', sans-serif;
-  src: url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+  font-family: 'Signika Negative', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap');
 }
 
 :root {
   --clr-text: #ffffff;
-  --clr-primary: #8366f8;
-  --clr-secondary: #f0f0f0;
+  --clr-primary: #FF3D00;
+  --clr-background: rgba(235, 233, 232, 0.75);
+  --clr-secondary: #FFCA99;
 
   --ff-title: ;
-  --ff-sans: 'Raleway', sans-serif;
+  --ff-sans: 'Signika Negative', sans-serif;
 }
 
 html {
@@ -151,6 +149,16 @@ background-color: #363534;
 }
 
 .section-title {
-  margin: 2em 0 2em 0;
+  padding: 1em 0 0.5em 0;
   text-align: center;
+  font-style: italic;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  margin: 5px auto 0 auto;
+  height: 6px;
+  width: 100px;
+  background-color: var(--clr-primary);
 }

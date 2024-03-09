@@ -1,13 +1,15 @@
 <template>
-  <header>
-        <h2 class="section-title">ABOUT ME</h2>
-    </header>
-    <section class="about-me">
-        <p class="about-blurb">I am a recent graduate from Iowa State University with an enthusiasm and curiosity for frontend development and design. Outside of the software universe I spend my time lifting weights, playing basketball, reading, and cooking. I geek out on music and movies of all genres and generations, and I love learning about fashion and interior design.</p>
-        <img id="brady" src="../assets/brady.jpeg">
-    </section>
+    <div class="about-me-wrapper">
+        <section class="about-me">
+            <img id="brady" src="../assets/brady.jpeg">
+            <div class="about-info">
+                <h2 class="about-title">About Me</h2>
+                <p class="about-blurb">I am a recent graduate from Iowa State University with an enthusiasm and curiosity for frontend development and design. Outside of the software universe I spend my time lifting weights, playing basketball, reading, and cooking. I geek out on music and movies of all genres and generations, and I love learning about fashion and interior design.</p>
+            </div>
+        </section>
+    </div>
     <section class="my-journey">
-        <h3>MY JOURNEY</h3>
+        <h2 class="section-title">My Journey</h2>
         <div class="journey-block">
             <div class="journey-block-header">
                 <img src="../assets/uihc.jpeg" alt="" id="journey-img">
@@ -52,62 +54,88 @@
 </template>
 
 <style scoped>
-  @media (min-width: 1024px) {
-    .about {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
+  .about-me-wrapper {
+        background-color: rgba(0,0,0,0.85);
+        color: #fff;
+    }
+
+    #brady {
+      width: 100%;
+    }
+
+    .journey-block {
+        margin-top: 5em;
+        justify-content: flex-start;
+        background-color: rgba(0,0,0,0.85);
+        border-radius: 0em;
+        border: #fff solid 3px;
+        box-shadow: 0 3px 3px 5px rgba(0,0,0,0.2);
+        color: #fff;
+        padding: 2em;
+        font-style: normal;
+    }
+
+  @media (min-width: 800px) {
+    .about-me {
+      display: grid;
+      grid-template-columns: 40% calc(60% - 1em);
+      grid-gap: 10em;
+      font-style: italic;
+    }
+
+    .about-info {
+        margin-top: 5em;
+        text-align: left;
+    }
+
+    .about-blurb {
+        width: 30em;
+        margin: 1em 2em 1em 0;
+        line-height: 1.4;
+        font-size: 20px;
+        font-style: normal;
+    }
+
+    .my-journey {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 15em 5em 15em;
+        font-style: italic;
+    }
+
+    #journey-img {
+        border-radius: 1em;
+        box-shadow: 0 3px 3px 2px rgba(0,0,0,0.2);
+    }
+
+    .journey-block-header {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 2em;
+    }
+
+    .journey-block-title {
+        margin-left: 1em;
+        position: relative;
+        bottom: -2em;
     }
   }
+  @media (max-width: 799px) {
+    .about-info {
+        margin-top: 5em;
+        text-align: center;
+    }
+    .journey-block-header {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        align-items: baseline;
+        grid-gap: 1em;
+        margin-bottom: 2em;
+    }
 
-  body {
-      background-color: var(--clr-secondary);
-      color: #000;
-  }
-
-  .about-me {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      
-  }
-
-  .about-blurb {
-      width: 30em;
-      margin: 1em 2em 1em 0;
-      line-height: 1.4;
-  }
-
-  #brady {
-      border-radius: 50%;
-  }
-
-  .my-journey {
-      margin-top: 5em;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-  }
-
-  .journey-block {
-      margin-top: 5em;
-      justify-content: flex-start;
-  }
-
-  #journey-img {
-      border-radius: 1em;
-      box-shadow: 0 3px 3px 2px rgba(0,0,0,0.2);
-  }
-
-  .journey-block-header {
-      display: flex;
-      justify-content: flex-start;
-      margin-bottom: 2em;
-  }
-
-  .journey-block-title {
-      margin-left: 1em;
-      position: relative;
-      bottom: -2em;
+    .journey-block-title {
+        line-height: 1.2;
+    }
   }
 </style>

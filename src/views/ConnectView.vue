@@ -1,14 +1,15 @@
 <template>
-    <div class="contact-card">
-        <h3>Let's Connect!</h3>
-        <p>Fill out the form below and I'll get back to you as soon as possible. I'm also active on Instagram and Linkedin, and we can get in touch there!</p>
-        <input v-model="emailData.name" type="text" id="name" placeholder="Name">
-        <input v-model="emailData.email" type="text" id="email" placeholder="Email">
-        <textarea v-model="emailData.bodyText" type="text" id="message" placeholder="Write a message"></textarea>
-        <br>
-        <a class="btn btn-primary" id="submit" @click="SendEmail()">Submit</a>
-    </div>
-    {{emailData}}
+    <section class="connect-wrapper">
+        <h3 class="section-title">Let's Connect!</h3>
+        <p class="connect-blurb">Fill out the form below and I'll get back to you as soon as possible. I'm also active on Instagram and Linkedin, and we can get in touch there!</p>
+        <div class="contact-card">
+            <input v-model="emailData.name" type="text" id="name" placeholder="Name">
+            <input v-model="emailData.email" type="text" id="email" placeholder="Email">
+            <textarea v-model="emailData.bodyText" type="text" id="message" placeholder="Write a message"></textarea>
+            <br>
+            <a class="btn btn-primary" id="submit" @click="SendEmail()">Submit</a>
+        </div>
+    </section>
 </template>
 
 <script>
@@ -41,9 +42,18 @@
 </script>
 
 <style scoped>
+    .connect-wrapper {
+        padding-bottom: 5em;
+    }
+    .connect-blurb {
+        width: 25em;
+        text-align: center;
+        margin: 0 auto 0 auto;
+    }
     .contact-card {
         background-color: var(--clr-primary);
-        margin-top: 10em;
+        margin: 2em 25em 0 25em;
+        padding-top: 5em;
         text-align: center;
         color: var(--clr-text);
         border-radius: 1em;

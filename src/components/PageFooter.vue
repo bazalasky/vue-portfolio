@@ -1,11 +1,13 @@
 <template>
-  <div class="footer-container">
-      <div class="social-container">
-            <a href="https://www.instagram.com/brady_zalasky/"><font-awesome-icon icon="fa-brands fa-instagram" size="2xl" style="color: #ffffff;"/></a>
-            <a href="https://www.linkedin.com/in/brady-zalasky-00537514a/"><font-awesome-icon icon="fa-brands fa-linkedin" size="2xl" style="color: #ffffff;" /></a>
-        </div>
-      <span>© Brady Zalasky 2023</span>
-  </div>
+  <footer>
+    <div class="footer-container">
+        <div class="social-container">
+              <a href="https://www.instagram.com/brady_zalasky/"><font-awesome-icon icon="fa-brands fa-instagram" size="2xl" style="color: #ffffff;"/></a>
+              <a href="https://www.linkedin.com/in/brady-zalasky-00537514a/"><font-awesome-icon icon="fa-brands fa-linkedin" size="2xl" style="color: #ffffff;" /></a>
+          </div>
+        <span>© Brady Zalasky 2023</span>
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -28,7 +30,6 @@
     background-color: var(--clr-primary);
     position: absolute;
     left: 0;
-    margin-top: 10em;
     text-align: center;
   }
 </style>

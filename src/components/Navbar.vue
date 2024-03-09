@@ -1,5 +1,6 @@
 <template>
-  <div class="wrapper">
+  <header>
+    <div class="wrapper">
       <nav>
         <RouterLink class="navitem" to="/">Home</RouterLink>
         <RouterLink class="navitem" to="/about">About</RouterLink>
@@ -8,15 +9,22 @@
         <RouterLink class="navitem" to="/connect">Connect</RouterLink>
       </nav>
     </div>
+  </header>
 </template>
 
 <script>
 </script>
 
 <style scoped>
+  header {
+    height: 7.5rem;
+  }
+  a {
+    color: #FFF;
+  }
+
   .wrapper {
     background-color: var(--clr-primary);
-    color: #fff;
     padding: 2rem;
     position: absolute;
     top: 0;
