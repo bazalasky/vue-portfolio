@@ -75,7 +75,7 @@
         font-style: normal;
     }
 
-  @media (min-width: 800px) {
+  @media screen and (min-width: 800px) {
     .about-me {
       display: grid;
       grid-template-columns: 40% calc(60% - 1em);
@@ -121,21 +121,26 @@
         bottom: -2em;
     }
   }
-  @media (max-width: 799px) {
+  @media screen and (max-width: 799px) {
     .about-info {
-        margin-top: 5em;
+        margin: 2em 1em 0 1em;
+        padding-bottom: 2em;
         text-align: center;
+    }
+
+    .journey-block {
+        margin: 5em 1em 5em 1em;
     }
     .journey-block-header {
         display: grid;
         grid-template-columns: 25% 75%;
-        align-items: baseline;
         grid-gap: 1em;
         margin-bottom: 2em;
     }
 
     .journey-block-title {
         line-height: 1.2;
+        align-self: flex-end;
     }
   }
 </style>

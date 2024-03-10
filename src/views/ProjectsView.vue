@@ -109,4 +109,10 @@
     .project:hover .project-text{
         display: none;
     }
+
+    @media screen and (max-width: 799px) {
+        .section-title {
+            margin-top: 1em;
+        }
+    }
 </style>

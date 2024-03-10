@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
   <video autoplay muted id="titleVideo">
     <source src="../assets/BZtitlecard.mp4" type="video/mp4">
@@ -21,6 +18,12 @@
     </div>
   </section>
 </template>
+
+<script>
+  window.onload = function() {
+    document.section.style.backgroundColor = "none";
+  }
+</script>
 
 <style scoped>
   #titleVideo {

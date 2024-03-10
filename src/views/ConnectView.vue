@@ -45,52 +45,101 @@
     .connect-wrapper {
         padding-bottom: 5em;
     }
-    .connect-blurb {
-        width: 25em;
-        text-align: center;
-        margin: 0 auto 0 auto;
-    }
+
     .contact-card {
         background-color: var(--clr-primary);
-        margin: 2em 25em 0 25em;
-        padding-top: 5em;
         text-align: center;
         color: var(--clr-text);
         border-radius: 1em;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .connect-blurb {
+        text-align: center;
+        margin: 0 auto 0 auto;
     }
 
     h3 {
         padding-top: 1em;
     }
 
-    p {
-        margin: 1em 20em 1em 20em;
-        font-size: 18px;
-    }
-
     input {
-        width: 50rem;
         height: 3em;
-        margin: 1em 5em 1em 5em;
         font-size: 16px;
         padding: 5px;
     }
 
     #message {
-        width: 50rem;
         height: 10em;
-        margin: 1em 5em 1em 5em;
         font-size: 16px;
         padding: 5px;
         font-family: 'Raleway', sans-serif;
     }
 
     #submit {
-        margin: 2em 0 3em 0;
+        max-width: 8em;
+        justify-self: center;
     }
 
     #submit:hover {
         background-color: hsla(168, 100%, 1%, 0.6);
+    }
+
+    @media screen and (min-width: 800px) {
+        p {
+            margin: 1em 20em 1em 20em;
+            font-size: 18px;
+        }
+
+        .contact-card {
+            margin: 2em 25em 0 25em;
+            padding-top: 5em;
+        }
+
+        .connect-blurb {
+            width: 25em;
+            text-align: center;
+            margin: 0 auto 0 auto;
+        }
+
+        #submit {
+            margin: 2em 0 3em 0;
+        }
+
+        input {
+            margin: 1em 5em 1em 5em;
+        }
+
+        #message {
+            margin: 1em 5em 1em 5em;
+        }
+    }
+
+    @media screen and (max-width: 799px) {
+        .section-title {
+            margin-top: 1em;
+        }
+
+        p {
+            width: 50%;
+        }
+        .contact-card {
+            margin: 2em 2em 0 2em;
+            padding-top: 2em;
+        }
+
+        input {
+            margin: 1em 3em 1em 3em;
+        }
+        
+        #message {
+            margin: 1em 3em 1em 3em;
+        }
+
+        #submit {
+            margin: 0 0 2em 0;
+        }
     }
     
 </style>
