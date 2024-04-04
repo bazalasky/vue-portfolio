@@ -44,6 +44,7 @@
 <style scoped>
     .connect-wrapper {
         padding-bottom: 5em;
+        background-color: var(--clr-background);
     }
 
     .contact-card {

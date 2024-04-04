@@ -1,3 +1,8 @@
+<script setup>
+  import { ref } from 'vue'
+  const visible = ref(false);
+</script>
+
 <template>
   <header>
     <div class="wrapper">
@@ -10,20 +15,24 @@
       </nav>
       <nav class="mobileNav">
         <h4 class="logo">BRADY ZALASKY</h4>
-        <a href="https://www.instagram.com/brady_zalasky/"><font-awesome-icon icon="fa-solid fa-bars" size="2xl" style="color: #ffffff;"/></a>
+        <font-awesome-icon id="hamburgerMenu" v-if="!visible" @click="visible = !visible" icon="fa-solid fa-bars" size="2xl" style="color: #ffffff;"/>
+        <font-awesome-icon id="hamburgerMenu" v-if="visible" @click="visible = !visible" icon="fa-solid fa-x" size="2xl" style="color: #ffffff;"/>
+        <div id="mobileMenu" v-if="visible">
+          <hr>
+          <RouterLink class="navitem" @click="visible = !visible" to="/">Home</RouterLink>
+          <hr>
+          <RouterLink class="navitem" @click="visible = !visible" to="/about">About</RouterLink>
+          <hr>
+          <RouterLink class="navitem" @click="visible = !visible" to="/projects">Projects</RouterLink>
+          <hr>
+          <RouterLink class="navitem" @click="visible = !visible" to="/connect">Connect</RouterLink>
+      </div>
       </nav>
     </div>
   </header>
 </template>
 
-<script>
-</script>
-
 <style scoped>
-  header {
-    height: 7.5rem;
-  }
-
   a {
     color: #FFF;
   }
@@ -32,7 +41,26 @@
     color: #fff;
   }
 
+  #mobileMenu {
+      height: 100%;
+      width: 100%;
+      background-color: var(--clr-primary);
+      grid-template-columns: 1fr;
+      display: grid;
+      line-height: 3;
+      margin-top: 1em;
+  }
+
+  hr {
+    background-color: #fff;
+    border: 0.5px solid #fff;
+  }
+
   @media screen and (min-width: 800px) {
+    header {
+      height: 7.5rem;
+    }
+
     .wrapper {
       background-color: var(--clr-primary);
       padding: 2rem;
@@ -63,6 +91,9 @@
   }
 
   @media screen and (max-width: 799px) {
+    header {
+      height: 7rem;
+    }
     .wrapper {
       background-color: var(--clr-primary);
       padding: 2rem;

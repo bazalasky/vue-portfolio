@@ -54,6 +54,10 @@
 </template>
 
 <style scoped>
+    .my-journey {
+        background-color: var(--clr-background);
+    }
+
   .about-me-wrapper {
         background-color: rgba(0,0,0,0.85);
         color: #fff;

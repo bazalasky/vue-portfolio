@@ -63,6 +63,7 @@
 
     .project-showcase {
         text-align: center;
+        background-color: var(--clr-background);
     }
 
     .projects {
