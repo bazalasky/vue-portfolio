@@ -1,13 +1,15 @@
 <template>
-  <header>
-        <h2 class="section-title">ABOUT ME</h2>
-    </header>
-    <section class="about-me">
-        <p class="about-blurb">I am a recent graduate from Iowa State University with an enthusiasm and curiosity for frontend development and design. Outside of the software universe I spend my time lifting weights, playing basketball, reading, and cooking. I geek out on music and movies of all genres and generations, and I love learning about fashion and interior design.</p>
-        <img id="brady" src="../assets/brady.jpeg">
-    </section>
+    <div class="about-me-wrapper">
+        <section class="about-me">
+            <img id="brady" src="../assets/brady.jpeg">
+            <div class="about-info">
+                <h2 class="about-title">About Me</h2>
+                <p class="about-blurb">I am a software engineer with an enthusiasm and curiosity for web development and design. I am someone who dreams big, loves to learn, and is always eager to try new things. When I'm not at my computer, I love to excerise, cook, play basketball, and play chess. I'm drawn to the outdoors and enjoy spending time hiking, running, swimming , hammocking, or just enjoying the view. Movies, music, fashion, and design are things that I geek out on and I would love to be able to incorporate them into my work someday!</p>
+            </div>
+        </section>
+    </div>
     <section class="my-journey">
-        <h3>MY JOURNEY</h3>
+        <h2 class="section-title">My Journey</h2>
         <div class="journey-block">
             <div class="journey-block-header">
                 <img src="../assets/uihc.jpeg" alt="" id="journey-img">
@@ -16,7 +18,7 @@
                     <h5>Application Developer, 2022 - Present</h5>
                 </div>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum vitae urna et volutpat. In fringilla nulla ut dapibus luctus. Maecenas non mauris ut purus mattis ornare. Nam sit amet tempor sapien. Maecenas condimentum elit at eros ullamcorper, ut blandit massa egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac habitasse platea dictumst. Maecenas venenatis sapien nisl, at aliquet ipsum semper ut. In et pulvinar orci, vitae dignissim ante.</p>
+            <p>In 2022, I began my journey at UIHC as an application developer. Working in the healthcare industry presented a number of new and exciting challenges. I gained a lot of experience working in a complex and highly regulated environment. At the same time I embraced new technical challenges, working with Drupal, PHP, Algolia, Acquia, and more for the first time, all the while working on websites of a scale larger than any I had worked on before. Whether I was designing intuitive user interfaces for healthcare professionals, developing new features to improve the patiennt experience, or implementing security measures to ensure patient safety, I took pride in knowing the work I did at UIHC was making a real difference, and at the same time I felt like I was able to take my skills as a web developer and a business professional to the next level. </p>
         </div>
         <div class="journey-block">
             <div class="journey-block-header">
@@ -52,62 +54,97 @@
 </template>
 
 <style scoped>
-  @media (min-width: 1024px) {
-    .about {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
+    .my-journey {
+        background-color: var(--clr-background);
+    }
+
+  .about-me-wrapper {
+        background-color: rgba(0,0,0,0.85);
+        color: #fff;
+    }
+
+    #brady {
+      width: 100%;
+    }
+
+    .journey-block {
+        margin-top: 5em;
+        justify-content: flex-start;
+        background-color: rgba(0,0,0,0.85);
+        border-radius: 0em;
+        border: #fff solid 3px;
+        box-shadow: 0 3px 3px 5px rgba(0,0,0,0.2);
+        color: #fff;
+        padding: 2em;
+        font-style: normal;
+    }
+
+  @media screen and (min-width: 800px) {
+    .about-me {
+      display: grid;
+      grid-template-columns: 40% calc(60% - 1em);
+      grid-gap: 10em;
+      font-style: italic;
+    }
+
+    .about-info {
+        margin-top: 5em;
+        text-align: left;
+    }
+
+    .about-blurb {
+        width: 30em;
+        margin: 1em 2em 1em 0;
+        line-height: 1.4;
+        font-size: 20px;
+        font-style: normal;
+    }
+
+    .my-journey {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 15em 5em 15em;
+        font-style: italic;
+    }
+
+    #journey-img {
+        border-radius: 1em;
+        box-shadow: 0 3px 3px 2px rgba(0,0,0,0.2);
+    }
+
+    .journey-block-header {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 2em;
+    }
+
+    .journey-block-title {
+        margin-left: 1em;
+        position: relative;
+        bottom: -2em;
     }
   }
+  @media screen and (max-width: 799px) {
+    .about-info {
+        margin: 2em 1em 0 1em;
+        padding-bottom: 2em;
+        text-align: center;
+    }
 
-  body {
-      background-color: var(--clr-secondary);
-      color: #000;
-  }
+    .journey-block {
+        margin: 5em 1em 5em 1em;
+    }
+    .journey-block-header {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-gap: 1em;
+        margin-bottom: 2em;
+    }
 
-  .about-me {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      
-  }
-
-  .about-blurb {
-      width: 30em;
-      margin: 1em 2em 1em 0;
-      line-height: 1.4;
-  }
-
-  #brady {
-      border-radius: 50%;
-  }
-
-  .my-journey {
-      margin-top: 5em;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-  }
-
-  .journey-block {
-      margin-top: 5em;
-      justify-content: flex-start;
-  }
-
-  #journey-img {
-      border-radius: 1em;
-      box-shadow: 0 3px 3px 2px rgba(0,0,0,0.2);
-  }
-
-  .journey-block-header {
-      display: flex;
-      justify-content: flex-start;
-      margin-bottom: 2em;
-  }
-
-  .journey-block-title {
-      margin-left: 1em;
-      position: relative;
-      bottom: -2em;
+    .journey-block-title {
+        line-height: 1.2;
+        align-self: flex-end;
+    }
   }
 </style>

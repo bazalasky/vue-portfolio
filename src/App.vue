@@ -2,28 +2,39 @@
 import { RouterLink, RouterView } from 'vue-router';
 import PageFooter from './components/PageFooter.vue';
 import Navbar from './components/Navbar.vue';
+
+// @Component({
+//   components: {
+//     Navbar,
+//     PageFooter,
+//   },
+// })
 </script>
 
 <template>
-  <header>
     <Navbar
     v-if="['home', '404'].indexOf($route.name) < 0"
     siteTitle="Brady Zalasky"
     logoPath=""
     />
-  </header>
-  <RouterView />
-  <PageFooter 
-  v-if="['home', '404'].indexOf($route.name) < 0"
-    siteTitle="Brady Zalasky"
-    logoPath=""
-  />
+
+    <RouterView />
+
+    <PageFooter 
+    v-if="['home', '404'].indexOf($route.name) < 0"
+      siteTitle="Brady Zalasky"
+      logoPath=""
+    />
 </template>
 
 <style scoped>
+@font-face {
+  font-family: 'Signika Negative', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap');
+}
+
 header {
   line-height: 1.5;
-  max-height: 10;
 }
 
 .logo {
