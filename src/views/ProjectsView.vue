@@ -4,7 +4,7 @@
         <div class="projects">
             <div class="project">
                 <div class="project-img">
-                    <img src="../assets/beatmachine.jpeg" alt="">
+                    <a href="https://github.com/bazalasky/WebAudioBeatMachine"><img src="../assets/beatmachine.jpeg" alt="Beat Machine"></a>
                 </div>
                 <div class="project-text">
                     <h4>WEB AUDIO BEAT MACHINE</h4>
@@ -13,7 +13,7 @@
             </div>
             <div class="project">
                 <div class="project-img">
-                    <img src="../assets/moviesearch.jpeg" alt="">
+                    <a href="https://github.com/bazalasky/project-log/tree/main/MovieRecs"><img src="../assets/moviesearch.jpeg" alt="Movie Search"></a>
                 </div>
                 <div class="project-text">
                     <h4>MOVIE SEARCH TOOL</h4>
@@ -22,29 +22,29 @@
             </div>
             <div class="project">
                 <div class="project-img">
-                    <img src="" alt="">
+                    <a href="https://github.com/bazalasky/PersonalPortfolio"><img src="../assets/portfolio.jpeg" alt="Portfolio"></a>
                 </div>
                 <div class="project-text">
                     <h4>PERSONAL PORTFOLIO</h4>
-                    <p>My first website built from scratch using HTML, CSS, and Javascript to display my work.</p>
+                    <p>My first website built from scratch to showcase my projects and offer a point of contact. Built using Vue.js and AWS.</p>
                 </div>
             </div>
             <div class="project">
                 <div class="project-img">
-                    <img src="" alt="">
+                    <a href="https://www.figma.com/proto/NPmUuJisvI7WvBUpjvgEz1/Wireframes-1?type=design&node-id=45-165&t=Cx6XbwsSXUON93WN-1&scaling=scale-down&page-id=45%3A164&starting-point-node-id=45%3A165&mode=design"><img src="../assets/punkband.jpeg" alt="Punk Band Merch"></a>
                 </div>
                 <div class="project-text">
-                    <h4>Google Cert 1</h4>
-                    <p>My first website built from scratch using HTML, CSS, and Javascript to display my work.</p>
+                    <h4>Punk Band Merchandising App</h4>
+                    <p>A mobile and web design mockup of a merchandising shop for a punk rock band. My first venture into UI/UX design. Built using Figma.</p>
                 </div>
             </div>
             <div class="project">
                 <div class="project-img">
-                    <img src="" alt="">
+                    <a href="https://www.figma.com/proto/bxbEZMzCBTZdu3bPWt33sN/Social-Good-Project?type=design&node-id=12-180&t=g4F4cmdpsDGBUpFB-1&scaling=scale-down&page-id=12%3A179&starting-point-node-id=12%3A180&mode=design"><img src="../assets/plantmd.jpeg" alt="Plant MD"></a>
                 </div>
                 <div class="project-text">
-                    <h4>Google Cert 2</h4>
-                    <p>My first website built from scratch using HTML, CSS, and Javascript to display my work.</p>
+                    <h4>Houseplant Care App</h4>
+                    <p>A design mockup for a mobile app meant to track houseplants and diagnose issues. My first design project with a major focus on user experience and functionality. Built using Figma.</p>
                 </div>
             </div>
         </div>
@@ -109,11 +109,5 @@
 
     .project:hover .project-text{
         display: none;
-    }
-
-    @media screen and (max-width: 799px) {
-        .section-title {
-            margin-top: 1em;
-        }
     }
 </style>

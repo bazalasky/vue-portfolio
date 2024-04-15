@@ -118,10 +118,6 @@
     }
 
     @media screen and (max-width: 799px) {
-        .section-title {
-            margin-top: 1em;
-        }
-
         p {
             width: 50%;
         }

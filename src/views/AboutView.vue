@@ -4,7 +4,7 @@
             <img id="brady" src="../assets/brady.jpeg">
             <div class="about-info">
                 <h2 class="about-title">About Me</h2>
-                <p class="about-blurb">I am a recent graduate from Iowa State University with an enthusiasm and curiosity for frontend development and design. Outside of the software universe I spend my time lifting weights, playing basketball, reading, and cooking. I geek out on music and movies of all genres and generations, and I love learning about fashion and interior design.</p>
+                <p class="about-blurb">I am a software engineer with an enthusiasm and curiosity for web development and design. I am someone who dreams big, loves to learn, and is always eager to try new things. When I'm not at my computer, I love to excerise, cook, play basketball, and play chess. I'm drawn to the outdoors and enjoy spending time hiking, running, swimming , hammocking, or just enjoying the view. Movies, music, fashion, and design are things that I geek out on and I would love to be able to incorporate them into my work someday!</p>
             </div>
         </section>
     </div>
@@ -18,7 +18,7 @@
                     <h5>Application Developer, 2022 - Present</h5>
                 </div>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum vitae urna et volutpat. In fringilla nulla ut dapibus luctus. Maecenas non mauris ut purus mattis ornare. Nam sit amet tempor sapien. Maecenas condimentum elit at eros ullamcorper, ut blandit massa egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac habitasse platea dictumst. Maecenas venenatis sapien nisl, at aliquet ipsum semper ut. In et pulvinar orci, vitae dignissim ante.</p>
+            <p>In 2022, I began my journey at UIHC as an application developer. Working in the healthcare industry presented a number of new and exciting challenges. I gained a lot of experience working in a complex and highly regulated environment. At the same time I embraced new technical challenges, working with Drupal, PHP, Algolia, Acquia, and more for the first time, all the while working on websites of a scale larger than any I had worked on before. Whether I was designing intuitive user interfaces for healthcare professionals, developing new features to improve the patiennt experience, or implementing security measures to ensure patient safety, I took pride in knowing the work I did at UIHC was making a real difference, and at the same time I felt like I was able to take my skills as a web developer and a business professional to the next level. </p>
         </div>
         <div class="journey-block">
             <div class="journey-block-header">

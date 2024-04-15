@@ -72,7 +72,7 @@
 
     .desktopNav {
       display: grid;
-      grid-template-columns: 80% 5% 5% 5% 5%;
+      grid-template-columns: 68% 8% 8% 8% 8%;
     }
 
     .mobileNav {
