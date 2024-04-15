@@ -22,7 +22,7 @@
             </div>
             <div class="project">
                 <div class="project-img">
-                    <a href="https://github.com/bazalasky/PersonalPortfolio"><img src="../assets/portfolio.jpeg" alt="Portfolio"></a>
+                    <a href="https://github.com/bazalasky/vue-portfolio"><img src="../assets/portfolio.jpeg" alt="Portfolio"></a>
                 </div>
                 <div class="project-text">
                     <h4>PERSONAL PORTFOLIO</h4>
