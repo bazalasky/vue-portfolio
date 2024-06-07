@@ -12,7 +12,7 @@
         <h2 class="section-title">My Journey</h2>
         <div class="journey-block">
             <div class="journey-block-header">
-                <img src="../assets/uihc.jpeg" alt="" id="journey-img">
+                <img src="../assets/uihc.jpeg" alt="UIHC" id="journey-img">
                 <div class="journey-block-title">
                     <h4>University of Iowa Health Care</h4>
                     <h5>Application Developer, 2022 - Present</h5>
@@ -22,7 +22,7 @@
         </div>
         <div class="journey-block">
             <div class="journey-block-header">
-                <img src="../assets/cylosoft.jpeg" alt="" id="journey-img">
+                <img src="../assets/cylosoft.jpeg" alt="Cylosoft" id="journey-img">
                 <div class="journey-block-title">
                     <h4>Cylosoft</h4>
                     <h5>Software Engineer Intern, 2020 - 2022</h5>
@@ -32,7 +32,7 @@
         </div>
         <div class="journey-block">
             <div class="journey-block-header">
-                <img src="../assets/nebullam_edited.jpeg" alt="" id="journey-img">
+                <img src="../assets/nebullam_edited.jpeg" alt="Nebullam" id="journey-img">
                 <div class="journey-block-title">
                     <h4>Nebullam</h4>
                     <h5>Market Research Analyst, 2018 - 2020</h5>
@@ -42,7 +42,7 @@
         </div>
         <div class="journey-block">
             <div class="journey-block-header">
-                <img src="../assets/isu_edited.jpeg" alt="" id="journey-img">
+                <img src="../assets/isu_edited.jpeg" alt="ISU" id="journey-img">
                 <div class="journey-block-title">
                     <h4>Iowa State University</h4>
                     <h5>Software Engineering, 2017-2021</h5>

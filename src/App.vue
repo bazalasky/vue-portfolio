@@ -3,15 +3,10 @@ import { RouterLink, RouterView } from 'vue-router';
 import PageFooter from './components/PageFooter.vue';
 import Navbar from './components/Navbar.vue';
 
-// @Component({
-//   components: {
-//     Navbar,
-//     PageFooter,
-//   },
-// })
 </script>
 
 <template>
+    <title>Brady Zalasky</title>
     <Navbar
     v-if="['home', '404'].indexOf($route.name) < 0"
     siteTitle="Brady Zalasky"

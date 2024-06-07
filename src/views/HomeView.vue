@@ -1,7 +1,4 @@
 <template>
-  <video autoplay muted loop plays-inline id="titleVideo">
-    <source src="../assets/bzvidnotext.mp4" type="video/mp4">
-  </video>
   <section class="home-page">
     <h1 class="logo">BRADY ZALASKY</h1>
     <p class="blurb">I’m a software engineer with an emphasis on web development. I'm passionate about creating a better web experience with the intersection of functionality and design.</p>
@@ -23,14 +20,9 @@
 </script>
 
 <style scoped>
-  body {
+  #app {
     text-align: center;
-  }
-  #titleVideo {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
+    background-image: url('../assets/BradyBG.jpg');
   }
 
   .home-page {
@@ -42,6 +34,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    background-image: url('../assets/BradyBG.jpg');
   }
 
   .logo, .blurb {
@@ -57,20 +50,6 @@
   p {
     font-size: 24px;
   }
-
-  /* @media (min-aspect-ratio: 16/9) {
-    #titleVideo {
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  @media (max-aspect-ratio: 16/9) {
-    #titleVideo {
-      width: 100%;
-      height: auto;
-    }
-  } */
 
   @media screen and (min-width: 800px) {
     .btn-group {

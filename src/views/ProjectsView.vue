@@ -110,4 +110,11 @@
     .project:hover .project-text{
         display: none;
     }
+
+    @media screen and (max-width: 799px) {
+        .projects {
+            margin: 0 1em 0 1em;
+        }
+    }
+        
 </style>
