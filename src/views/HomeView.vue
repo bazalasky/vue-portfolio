@@ -1,4 +1,5 @@
-<template>
+<!-- REMOVED FOR NOW. About page to serve as home page. Might bring back at a later date. -->
+<!-- <template>
   <section class="home-page">
     <h1 class="logo">BRADY ZALASKY</h1>
     <p class="blurb">I’m a software engineer with an emphasis on web development. I'm passionate about creating a better web experience with the intersection of functionality and design.</p>
@@ -109,4 +110,4 @@
   .social-container > a {
     margin: 0 1em 0 0;
   }
-</style>
+</style> -->
