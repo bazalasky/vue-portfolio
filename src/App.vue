@@ -8,7 +8,7 @@ import Navbar from './components/Navbar.vue';
 <template>
     <title>Brady Zalasky</title>
     <Navbar
-    v-if="['home', '404'].indexOf($route.name) < 0"
+    v-if="['404'].indexOf($route.name) < 0"
     siteTitle="Brady Zalasky"
     logoPath=""
     />
@@ -16,7 +16,7 @@ import Navbar from './components/Navbar.vue';
     <RouterView />
 
     <PageFooter 
-    v-if="['home', '404'].indexOf($route.name) < 0"
+    v-if="['404'].indexOf($route.name) < 0"
       siteTitle="Brady Zalasky"
       logoPath=""
     />

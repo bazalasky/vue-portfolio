@@ -15,7 +15,7 @@
                 <img src="../assets/uihc.jpeg" alt="UIHC" id="journey-img">
                 <div class="journey-block-title">
                     <h4>University of Iowa Health Care</h4>
-                    <h5>Application Developer, 2022 - Present</h5>
+                    <h5>Application Developer, 2022 - 2024</h5>
                 </div>
             </div>
             <p>In 2022, I began my journey at UIHC as an application developer. Working in the healthcare industry presented a number of new and exciting challenges. I gained a lot of experience working in a complex and highly regulated environment. At the same time I embraced new technical challenges, working with Drupal, PHP, Algolia, Acquia, and more for the first time, all the while working on websites of a scale larger than any I had worked on before. Whether I was designing intuitive user interfaces for healthcare professionals, developing new features to improve the patiennt experience, or implementing security measures to ensure patient safety, I took pride in knowing the work I did at UIHC was making a real difference, and at the same time I felt like I was able to take my skills as a web developer and a business professional to the next level. </p>
@@ -28,7 +28,17 @@
                     <h5>Software Engineer Intern, 2020 - 2022</h5>
                 </div>
             </div>            
-            <p>In Spring of 2020, I transitioned from Nebullam to an established web development company at Cylosoft. At Cylosoft I was able to gain invaluable experience working on large scale web development projects. The biggest one being Stripes: a website and app providing an organized scheduling system for referees of all sports. I was able to contribute to the design and functionality of the scheduling page, and aid in the rollout of the application on the App Store. I also led an effort to ensure our websites met WCAG 2.1 ADA compliance standards, making changes to our HTML and CSS to improve our accessibility. When I wasn't working on either of those projects, I was helping to update and add material to the frontend of our clients' websites. My time at Cylosoft added fuel to the fire of my passion for web development and design, and I'm looking forward to what's next on my journey!</p>
+            <p>In Spring of 2020, I transitioned from Nebullam to an established web development company at Cylosoft. At Cylosoft I was able to gain invaluable experience working on large scale web development projects. The biggest one being MadeHoops: a website and app providing a home base for recruiters to discover basketball talent. I was able to contribute to the design and functionality of the scheduling page, and aid in the rollout of the application on the App Store. I also led an effort to ensure our websites met WCAG 2.1 ADA compliance standards, making changes to our HTML and CSS to improve our accessibility. When I wasn't working on either of those projects, I was helping to update and add material to the frontend of our clients' websites. My time at Cylosoft added fuel to the fire of my passion for web development and design, and I'm looking forward to what's next on my journey!</p>
+        </div>
+        <div class="journey-block">
+            <div class="journey-block-header">
+                <img src="../assets/hazel_creative.jpg" alt="Hazel Creative" id="journey-img">
+                <div class="journey-block-title">
+                    <h4>Hazel Creative</h4>
+                    <h5>Web Content Manager, 2020 - Present</h5>
+                </div>
+            </div>
+            <p>While working at Nebullam and wrapping up school, I jumped at the opportunity to develop my content management skills at Hazel Creative. Here I was able to get a chance to design pages and features, create graphics, and write blogs and social media posts. I was able to gain a better perspective of how the content side interacts with the development side of a web application. I now gain an understanding of what it takes to take a web application through the entire software development lifecyle. From an idea, to a design, to a fully developed application, and finally a live application with content. </p>
         </div>
         <div class="journey-block">
             <div class="journey-block-header">
