@@ -1,6 +1,6 @@
 <template>
     <section class="connect-wrapper">
-        <h3 class="section-title">Let's Connect!</h3>
+        <h2 class="section-title">LET'S CONNECT!</h2>
         <p class="connect-blurb">Fill out the form below and I'll get back to you as soon as possible. I'm also active on Instagram and Linkedin, and we can get in touch there!</p>
         <div class="contact-card">
             <input v-model="emailData.name" type="text" id="name" placeholder="Name">
@@ -44,11 +44,12 @@
 <style scoped>
     .connect-wrapper {
         padding-bottom: 5em;
-        background-color: var(--clr-background);
     }
 
     .contact-card {
-        background-color: var(--clr-primary);
+        width: 50%;
+        margin: auto;
+        background-color: #FFF;
         text-align: center;
         color: var(--clr-text);
         border-radius: 1em;
@@ -57,18 +58,25 @@
     }
 
     .connect-blurb {
-        text-align: center;
-        margin: 0 auto 0 auto;
+        margin-left: 12%;
+        color: #FFF;
+        margin-bottom: 2em;
     }
 
-    h3 {
+    h2 {
         padding-top: 1em;
+        margin-left: 12%;
     }
 
     input {
         height: 3em;
         font-size: 16px;
         padding: 5px;
+        background-color: #EBEBEB;
+    }
+
+    textarea {
+        background-color: #EBEBEB;
     }
 
     #message {
@@ -81,27 +89,24 @@
     #submit {
         max-width: 8em;
         justify-self: center;
+        background-color: #FE3D01;
     }
 
     #submit:hover {
-        background-color: hsla(168, 100%, 1%, 0.6);
+        background-color: #000;
     }
 
     @media screen and (min-width: 800px) {
         p {
-            margin: 1em 20em 1em 20em;
             font-size: 18px;
         }
 
         .contact-card {
-            margin: 2em 25em 0 25em;
             padding-top: 5em;
         }
 
         .connect-blurb {
             width: 25em;
-            text-align: center;
-            margin: 0 auto 0 auto;
         }
 
         #submit {
@@ -121,9 +126,21 @@
         p {
             width: 50%;
         }
+
+        .section-title {
+            margin-left: 6%;
+            padding: 0;
+        }
+
+        .connect-blurb {
+            margin-left: 8%;
+            width: 80%;
+        }
+
         .contact-card {
             margin: 2em 2em 0 2em;
             padding-top: 2em;
+            width: 85%;
         }
 
         input {
