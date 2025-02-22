@@ -1,19 +1,13 @@
-<!-- REMOVED FOR NOW. About page to serve as home page. Might bring back at a later date. -->
-<!-- <template>
+<template>
   <section class="home-page">
-    <h1 class="logo">BRADY ZALASKY</h1>
-    <p class="blurb">I’m a software engineer with an emphasis on web development. I'm passionate about creating a better web experience with the intersection of functionality and design.</p>
-    <nav>
-        <div class="btn-group">
-            <a href="/about" class="btn btn-secondary">About</a>
-            <a href="/projects" class="btn btn-secondary">Projects</a>
-            <a href="/connect" class="btn btn-secondary">Connect</a>
-        </div>
-    </nav>
-    <div class="social-container">
-      <a href="https://www.instagram.com/brady_zalasky/"><font-awesome-icon icon="fa-brands fa-instagram" size="2xl" style="color: #ffffff;"/></a>
-      <a href="https://www.linkedin.com/in/brady-zalasky-00537514a/"><font-awesome-icon icon="fa-brands fa-linkedin" size="2xl" style="color: #ffffff;" /></a>
+    <div class="content-wrapper">
+      <h1 class="logo">BRADY ZALASKY</h1>
+      <h4 class="blurb">Software engineer with a passion for web development and design</h4>
+      <div class="learn-more">
+        <a href="/about" class="btn btn-secondary">Learn More</a>
+      </div>
     </div>
+    <div class="bz-logo"><img alt="BZ logo" src="../assets/BZ-Only_WhiteWhiteTrans.jpg"></div>
   </section>
 </template>
 
@@ -21,56 +15,49 @@
 </script>
 
 <style scoped>
-  #app {
-    text-align: center;
-    background-image: url('../assets/BradyBG.jpg');
-  }
-
   .home-page {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background-image: url('../assets/BradyBG.jpg');
-  }
-
-  .logo, .blurb {
+    width: 75%;
+    height: 100%;
+    margin: 0 auto 5rem auto;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 50% 50%;
     justify-content: center;
   }
 
   .logo {
     color: white;
+    line-height: 0.8;
+    margin-top: 10rem;
+  }
+
+  .bz-logo {
+    color: #fff;
+    margin-top: 10rem;
+    width: 100%;
+    text-align: right;
   }
 
   p {
     font-size: 24px;
   }
 
-  @media screen and (min-width: 800px) {
-    .btn-group {
-      display: grid;
-      grid-template-columns: 33% 33% 33%;
-      grid-gap: 5rem;
-      margin: 0 8rem 0 8rem;
-      justify-content: center;
-    }
+  .learn-more {
+    text-align: right;
+  }
 
-    .social-container {
-      margin-top: 5em;
-    }
+  @media screen and (min-width: 800px) {
 
     .blurb {
       color: #fff;
-      text-align: center;
       line-height: 1.4;
-      width: 25em;
-      margin: 2em auto 5em auto;
+      width: 100%;
+      margin: 1em 0 1em 0;
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    .logo {
+      font-size: 72px;
     }
   }
 
@@ -79,35 +66,32 @@
       font-size: 16px;
     }
 
-    .social-container {
-      margin: 2em auto 0 11em;
-    }
-
-    .btn-group {
-      display: grid;
-      grid-template-columns: 1fr;
-      justify-content: center;
-    }
-
     .logo {
       font-size: 3.5em;
       max-width: 100%;
       line-height: 1;
-      margin: 0.5 auto 0 auto;
-      text-align: center;
+      margin-top: 0;
     }
 
     .blurb {
       color: #fff;
       font-size: 16px;;
-      text-align: center;
       line-height: 1.4;
-      width: 15em;
+      width: 100%;
       margin: 2em auto 2em auto;
     }
-  }
 
-  .social-container > a {
-    margin: 0 1em 0 0;
+    .home-page {
+      grid-template-columns: 1fr;
+    }
+
+    .bz-logo {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .learn-more {
+      text-align: left;
+    }
   }
-</style> -->
+</style>

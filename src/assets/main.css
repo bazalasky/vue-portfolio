@@ -3,6 +3,8 @@
 #app {
   margin: 0 auto;
   font-weight: normal;
+  background-image: linear-gradient(#FF7043, #FF3D00);
+  border: 15px solid #FFF;
 }
 
 a {
@@ -11,27 +13,13 @@ a {
   font-size: 20px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(168, 100%, 1%, 0.2);
-  }
-}
-
 @font-face {
-  font-family: 'Signika Negative', sans-serif;
-  src: url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap');
-}
-
-@font-face {
-  font-family: 'Orbitron', sans-serif;
-  src: url(https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap);
+  font-family: 'Red rose', serif;
+  src: url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@300..700&display=swap');
 }
 
 :root {
   --clr-text: #ffffff;
-  --clr-primary: #FF3D00;
-  --clr-background: rgba(235, 233, 232, 0.75);
-  --clr-secondary: #FFCA99;
 
   --ff-title: ;
   --ff-sans: 'Signika Negative', sans-serif;
@@ -50,8 +38,8 @@ html {
   background: transparent;  /* Optional: just make scrollbar invisible */
 }
 
-h1, h2, h3, h4, p {
-  margin: 0;
+h1, h2, h3, h4, h5, p {
+  margin: 10px 0 10px 0;
 }
 
 h2, h3 {
@@ -71,19 +59,19 @@ h3 {
 }
 
 h4 {
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1rem;
 }
 
 p {
   margin-bottom: 0.85em;
 }
 
-.btn-group {
-  flex-wrap: wrap;
-}
-
 .btn {
-  padding: .75em 2.5em;
+  padding: .5em 1em;
   text-decoration: none;
   display: inline-block;
   margin: 0.5em 0;
@@ -99,7 +87,8 @@ p {
 }
 
 .btn-secondary {
-  color: #000;
+  color: #FF3D00;
+  font-weight: 600;
   background-color: #fff;
   border-radius: 0.5em;
   box-shadow: 0 4px 0 0px rgba(0,0,0,0.2);
@@ -108,8 +97,8 @@ p {
 
 .btn-secondary:hover {
   background-color: #000;
-  color: #fff;
-}
+  color: #FFF;
+} 
 
 .navigation {
 list-style-type: none;
@@ -154,21 +143,12 @@ background-color: #363534;
 }
 
 .section-title {
-  padding: 1em 0 0.5em 0;
-  text-align: center;
-  font-style: italic;
-}
-
-.section-title::after {
-  content: "";
-  display: block;
-  margin: 5px auto 0 auto;
-  height: 6px;
-  width: 100px;
-  background-color: var(--clr-primary);
+  padding: 1.5em 0 0 0;
+  color: #FFF;
+  font-weight: 600;
 }
 
 .logo {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Red rose', serif;
   font-weight: 500;
 }
