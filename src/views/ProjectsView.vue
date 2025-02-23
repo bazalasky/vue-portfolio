@@ -131,7 +131,7 @@
 
         .project-text {
             visibility: visible;
-            height: 125px;
+            height: 150px;
             width: 100%;
         }
     }
