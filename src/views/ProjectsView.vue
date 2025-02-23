@@ -45,7 +45,7 @@
                     <a href="https://www.figma.com/proto/bxbEZMzCBTZdu3bPWt33sN/Social-Good-Project?type=design&node-id=12-180&t=g4F4cmdpsDGBUpFB-1&scaling=scale-down&page-id=12%3A179&starting-point-node-id=12%3A180&mode=design"><img src="../assets/plantmd.jpeg" alt="Plant MD"></a>
                 </div>
                 <div class="project-text">
-                    <p>A design mockup for a mobile app meant to track houseplants and diagnose issues. My first design project with a major focus on user experience and functionality. Built using Figma.</p>
+                    <p>A design mockup for a mobile app meant to track houseplants and diagnose issues. Design project with a focus on user experience and functionality. Built using Figma.</p>
                 </div>
             </div>
         </div>
