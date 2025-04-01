@@ -8,9 +8,8 @@
     <div style="height: 50px;"></div>
     <div class="wrapper" v-bind:class="{'nav-open': visible === true}" >
       <nav class="desktopNav">
-        <img class="logo" src="../assets/25_BZ_V3.jpg">
+        <RouterLink to="/"><img class="logo" src="../assets/25_BZ_V3.jpg"></RouterLink>
         <div class="divider"></div>
-        <RouterLink class="navitem" to="/">Home</RouterLink>
         <RouterLink class="navitem" to="/about">About</RouterLink>
         <RouterLink class="navitem" to="/projects">Projects</RouterLink>
         <RouterLink class="navitem last-nav" to="/connect">Connect</RouterLink>

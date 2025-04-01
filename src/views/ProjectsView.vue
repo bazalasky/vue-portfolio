@@ -4,6 +4,24 @@
         <p class="project-blurb">Click on project image to view on Github or Figma</p>
         <div class="projects">
             <div class="project">
+                <h5>COLLEGE BASKETBALL SIMULATOR</h5>
+                <div class="project-img">
+                    <a href="https://github.com/feddie17/CollegeBasketballSimulator"><img src="../assets/cbb_simulator.jpg" alt="College Basketball Simulator"></a>
+                </div>
+                <div class="project-text">
+                    <p>A .NET console application built with a friend to simulate college basketball game results using live data.</p>
+                </div>
+            </div>
+            <div class="project">
+                <h5>COFFEE JOURNAL</h5>
+                <div class="project-img">
+                    <a href="https://github.com/bazalasky/CoffeeJournal"><img src="../assets/coffee_journal.jpg" alt="CoffeeJournal"></a>
+                </div>
+                <div class="project-text">
+                    <p>A .NET Web API application built with Angular to keep track of my favorite coffee shops and orders.</p>
+                </div>
+            </div>
+            <div class="project">
                 <h5>WEB AUDIO BEAT MACHINE</h5>
                 <div class="project-img">
                     <a href="https://github.com/bazalasky/WebAudioBeatMachine"><img src="../assets/beatmachine.jpeg" alt="Beat Machine"></a>
