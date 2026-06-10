@@ -9,14 +9,17 @@
     <div class="wrapper" v-bind:class="{'nav-open': visible === true}" >
       <nav class="desktopNav">
         <RouterLink to="/"><img class="logo" src="../assets/25_BZ_V3.jpg"></RouterLink>
-        <div class="divider"></div>
-        <RouterLink class="navitem" to="/about">About</RouterLink>
-        <RouterLink class="navitem" to="/projects">Projects</RouterLink>
-        <RouterLink class="navitem last-nav" to="/connect">Connect</RouterLink>
-        <div class="divider"></div>
-        <a href="https://www.instagram.com/brady_zalasky/"><font-awesome-icon icon="fa-brands fa-instagram" class="icon" size="xl"/></a>
-        <a href="https://www.linkedin.com/in/brady-zalasky-00537514a/"><font-awesome-icon icon="fa-brands fa-linkedin" class="icon" size="xl"/></a>
-        <a href="https://github.com/bazalasky"><font-awesome-icon icon="fa-brands fa-github" class="icon" size="xl"></font-awesome-icon></a>
+        <div class="nav-right">
+          <div class="divider"></div>
+          <RouterLink class="navitem" to="/about">About</RouterLink>
+          <RouterLink class="navitem" to="/projects">Projects</RouterLink>
+          <RouterLink class="navitem last-nav" to="/connect">Connect</RouterLink>
+          <a href="/resume.pdf" target="_blank" rel="noopener">My Resume</a>
+          <div class="divider"></div>
+          <a href="https://www.instagram.com/brady_zalasky/"><font-awesome-icon icon="fa-brands fa-instagram" class="icon" size="xl"/></a>
+          <a href="https://www.linkedin.com/in/brady-zalasky-00537514a/"><font-awesome-icon icon="fa-brands fa-linkedin" class="icon" size="xl"/></a>
+          <a href="https://github.com/bazalasky"><font-awesome-icon icon="fa-brands fa-github" class="icon" size="xl"></font-awesome-icon></a>
+        </div>
       </nav>
       <nav class="mobileNav" v-bind:class="{'nav-open': visible === true}">
         <img class="logo" src="../assets/25_BZ_V3.jpg">
@@ -46,12 +49,14 @@
 
   .divider {
     background-color: #E73B05;
+    height: 75px;
     width: 3px;
     justify-self: center;
   }
 
   .logo {
     width: 100%;
+    max-width: 500px;
   }
 
   .nav-open {
@@ -86,14 +91,22 @@
     }
 
     .desktopNav {
-      display: grid;
-      grid-template-columns: 28% 1.5% 11% 11% 11% 11% 1.5% 3% 3% 3%;
+      display: flex;
+      align-items: center;
       gap: 1rem;
       border: 3px solid #E73B05;
       border-radius: 10px;
       padding: 2rem 1rem 2rem 2rem;
       margin: auto;
       width: 75%;
+      max-width: var(--content-max);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: auto;
     }
 
     .mobileNav {

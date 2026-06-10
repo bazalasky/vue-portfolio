@@ -1,5 +1,5 @@
 <template>
-  <section class="home-page">
+  <section class="home-page container">
     <div class="content-wrapper">
       <h1 class="logo">BRADY ZALASKY</h1>
       <h4 class="blurb">Software engineer with a passion for web development and design</h4>

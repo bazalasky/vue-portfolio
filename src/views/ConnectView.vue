@@ -32,7 +32,7 @@
                     alert("Email sent")
                 }
             ).catch(err => {
-                connsole.log(err)
+                console.log(err)
                 alert("Email failed")
             })
         }

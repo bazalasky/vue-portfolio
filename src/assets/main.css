@@ -100,6 +100,13 @@ p {
   color: #FFF;
 } 
 
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;        /* centers it */
+  padding-inline: 1.5rem;     /* keeps content off the edges on small screens */
+}
+
 .navigation {
 list-style-type: none;
 margin: 0;

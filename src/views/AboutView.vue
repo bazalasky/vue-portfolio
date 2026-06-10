@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            <p>While working at Nebullam and wrapping up school, I jumped at the opportunity to develop my content management skills at Hazel Creative. Here I was able to get a chance to design pages and features, create graphics, and write blogs and social media posts. I was able to gain a better perspective of how the content side interacts with the development side of a web application. I now gain an understanding of what it takes to take a web application through the entire software development lifecyle. From an idea, to a design, to a fully developed application, and finally a live application with content. </p>
+            <p>While working at Nebullam and wrapping up school, I jumped at the opportunity to develop my content management skills at Hazel Creative. Here I was able to get a chance to design pages and features, create graphics, and write blogs and social media posts. I was able to gain a better perspective of how the content side interacts with the development side of a web application. I now gain an understanding of what it takes to take a web application through the entire software development lifecycle. From an idea, to a design, to a fully developed application, and finally a live application with content. </p>
         </div>
         <div class="journey-block journey-block-right">
             <div class="journey-block-header">
