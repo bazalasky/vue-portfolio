@@ -25,16 +25,23 @@
   }
 
   .logo {
-    color: white;
+    color: var(--color-text);
     line-height: 0.8;
     margin-top: 10rem;
   }
 
   .bz-logo {
-    color: #fff;
+    color: var(--color-text);
     margin-top: 10rem;
     width: 100%;
     text-align: right;
+  }
+
+  .bz-logo img {
+    filter: invert(1);
+  }
+  @media (prefers-color-scheme: dark) {
+    .bz-logo img { filter: none; }
   }
 
   p {
@@ -48,7 +55,7 @@
   @media screen and (min-width: 800px) {
 
     .blurb {
-      color: #fff;
+      color: var(--color-text);
       line-height: 1.4;
       width: 100%;
       margin: 1em 0 1em 0;
@@ -74,7 +81,7 @@
     }
 
     .blurb {
-      color: #fff;
+      color: var(--color-text);
       font-size: 16px;;
       line-height: 1.4;
       width: 100%;

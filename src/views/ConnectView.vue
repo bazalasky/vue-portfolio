@@ -49,9 +49,9 @@
     .contact-card {
         width: 50%;
         margin: auto;
-        background-color: #FFF;
+        background-color: var(--color-background-mute);
         text-align: center;
-        color: var(--clr-text);
+        color: var(--color-text);
         border-radius: 1em;
         display: grid;
         grid-template-columns: 1fr;
@@ -59,12 +59,11 @@
 
     .connect-blurb {
         margin-left: 12%;
-        color: #FFF;
+        color: var(--color-text);
         margin-bottom: 2em;
     }
 
     h2 {
-        padding-top: 1em;
         margin-left: 12%;
     }
 
@@ -89,11 +88,6 @@
     #submit {
         max-width: 8em;
         justify-self: center;
-        background-color: #FE3D01;
-    }
-
-    #submit:hover {
-        background-color: #000;
     }
 
     @media screen and (min-width: 800px) {

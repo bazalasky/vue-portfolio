@@ -92,16 +92,16 @@
         grid-gap: 50px;
         align-items: center;
         margin-top: 5em;
-        background-color: #E73B05;
+        background-color: var(--color-background-soft);
         border-radius: 25px;
-        color: #fff;
+        color: var(--color-text);
         padding: 2em;
         font-style: normal;
     }
 
     .journey-img {
         max-height: 100px;
-        border: solid 1px #FFF;
+        border: solid 1px var(--color-border);
         border-radius: 1em;
         box-shadow: 0 3px 3px 2px rgba(0,0,0,0.2);
     }
@@ -128,7 +128,7 @@
     .journey-block-header {
         display: flex;
         justify-content: flex-start;
-        border-right: solid 3px #FFF;
+        border-right: solid 3px var(--color-accent);
         padding-right: 3em;
     }
 
@@ -149,7 +149,7 @@
         display: grid;
         grid-template-columns: 25% 85%;
         align-items: center;
-        border-bottom: solid 3px #FFF;
+        border-bottom: solid 3px var(--color-accent);
     }
 
     .desktop-header {
@@ -178,7 +178,7 @@
         display: grid;
         grid-template-columns: 1fr;
         align-items: center;
-        border-bottom: solid 3px #FFF;
+        border-bottom: solid 3px var(--color-accent);
     }
 
     h4, h5 {

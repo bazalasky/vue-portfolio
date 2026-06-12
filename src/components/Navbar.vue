@@ -14,7 +14,7 @@
           <RouterLink class="navitem" to="/about">About</RouterLink>
           <RouterLink class="navitem" to="/projects">Projects</RouterLink>
           <RouterLink class="navitem last-nav" to="/connect">Connect</RouterLink>
-          <a href="/resume.pdf" target="_blank" rel="noopener">My Resume</a>
+          <a href="/resume.pdf" class="navitem" target="_blank" rel="noopener">My Resume</a>
           <div class="divider"></div>
           <a href="https://www.instagram.com/brady_zalasky/"><font-awesome-icon icon="fa-brands fa-instagram" class="icon" size="xl"/></a>
           <a href="https://www.linkedin.com/in/brady-zalasky-00537514a/"><font-awesome-icon icon="fa-brands fa-linkedin" class="icon" size="xl"/></a>
@@ -23,8 +23,8 @@
       </nav>
       <nav class="mobileNav" v-bind:class="{'nav-open': visible === true}">
         <img class="logo" src="../assets/25_BZ_V3.jpg">
-        <font-awesome-icon id="hamburgerMenu" v-if="!visible" @click="visible = !visible" icon="fa-solid fa-bars" size="2xl" style="color: #ffffff;"/>
-        <font-awesome-icon id="hamburgerMenu" v-if="visible" @click="visible = !visible" icon="fa-solid fa-x" size="2xl" style="color: #ffffff;"/>
+        <font-awesome-icon id="hamburgerMenu" v-if="!visible" @click="visible = !visible" icon="fa-solid fa-bars" size="2xl"/>
+        <font-awesome-icon id="hamburgerMenu" v-if="visible" @click="visible = !visible" icon="fa-solid fa-x" size="2xl"/>
         <div id="mobileMenu" v-if="visible">
           <hr>
           <RouterLink class="navitem" @click="visible = !visible" to="/">Home</RouterLink>
@@ -42,13 +42,13 @@
 
 <style scoped>
   a {
-    color: #FFF;
+    color: var(--color-text);
     align-self: center;
     justify-self: center;
   }
 
   .divider {
-    background-color: #E73B05;
+    background-color: var(--color-accent);
     height: 75px;
     width: 3px;
     justify-self: center;
@@ -57,10 +57,14 @@
   .logo {
     width: 100%;
     max-width: 500px;
+    filter: invert(1);
+  }
+  @media (prefers-color-scheme: dark) {
+    .logo { filter: none; }
   }
 
   .nav-open {
-    background-color: #E73B05;
+    background-color: var(--color-background-soft);
   }
 
   #mobileMenu {
@@ -78,11 +82,11 @@
   }
 
   .icon{
-    color: #ffffff; 
+    color: var(--color-text); 
   }
 
   .icon:hover {
-    color: #000;
+    color: var(--color-accent);
   }
 
   @media screen and (min-width: 800px) {
@@ -94,7 +98,7 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-      border: 3px solid #E73B05;
+      border: 3px solid var(--color-accent);
       border-radius: 10px;
       padding: 2rem 1rem 2rem 2rem;
       margin: auto;
@@ -122,7 +126,7 @@
     .navitem:hover {
       text-decoration: underline;
       text-underline-offset: 5px;
-      color: #000;
+      color: var(--color-accent);
     }
   }
 
