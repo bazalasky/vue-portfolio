@@ -82,7 +82,7 @@
 
     .project-blurb {
         margin-left: 12%;
-        color: #FFF;
+        color: var(--color-text);
         margin-bottom: 2em;
     }
 
@@ -90,7 +90,7 @@
         display: flex;
         flex-wrap: wrap;
         align-items: flex-start;
-        color: #fff;
+        color: var(--color-text);
         justify-content: center;
     }
 
@@ -98,13 +98,13 @@
         margin: 2em;
         padding: 2em;
         border-radius: 20px;
-        background-color: #E73B05;
+        background-color: var(--color-background-soft);
     }
 
     .project-img img {
         height: 200px;
         width: 300px;
-        border: solid 1px #FFF;
+        border: solid 1px var(--color-border);
         object-fit: cover;
     }
 

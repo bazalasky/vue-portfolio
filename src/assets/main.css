@@ -3,8 +3,9 @@
 #app {
   margin: 0 auto;
   font-weight: normal;
-  background-image: linear-gradient(#FF7043, #FF3D00);
-  border: 15px solid #FFF;
+  background-color: var(--color-background);
+  min-height: 100vh;
+  color: var(--color-text);
 }
 
 a {
@@ -40,6 +41,7 @@ html {
 
 h1, h2, h3, h4, h5, p {
   margin: 10px 0 10px 0;
+  color: var(--color-heading);
 }
 
 h2, h3 {
@@ -79,26 +81,34 @@ p {
 }
 
 .btn-primary {
-  color: var(--clr-text);
-  background-color: #000;
+  background-color: var(--color-accent); 
+  color: var(--color-accent-contrast);
   border-radius: 0.5em;
   box-shadow: 0 4px 0 0px rgba(0,0,0,0.2);
   text-align: center;
 }
 
 .btn-secondary {
-  color: #FF3D00;
+  color: var(--color-accent);
   font-weight: 600;
-  background-color: #fff;
+  background-color: transparent;
+  border: 2px solid var(--color-accent);
   border-radius: 0.5em;
   box-shadow: 0 4px 0 0px rgba(0,0,0,0.2);
   text-align: center;
 }
 
 .btn-secondary:hover {
-  background-color: #000;
-  color: #FFF;
+  background-color: var(--color-accent);
+  color: var(--color-accent-contrast);
 } 
+
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;        /* centers it */
+  padding-inline: 1.5rem;     /* keeps content off the edges on small screens */
+}
 
 .navigation {
 list-style-type: none;
@@ -144,8 +154,17 @@ background-color: #363534;
 
 .section-title {
   padding: 1.5em 0 0 0;
-  color: #FFF;
+  color: var(--color-heading);
   font-weight: 600;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-accent);
+  margin-top: 0.4rem;
 }
 
 .logo {

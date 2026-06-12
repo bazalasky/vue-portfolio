@@ -6,7 +6,7 @@
               <a href="https://www.linkedin.com/in/brady-zalasky-00537514a/"><font-awesome-icon icon="fa-brands fa-linkedin" class="icon" size="2xl" /></a>
               <a href="https://github.com/bazalasky"><font-awesome-icon icon="fa-brands fa-github" class="icon" size="2xl" ></font-awesome-icon></a>
           </div>
-        <span>© Brady Zalasky 2025</span>
+        <span>© Brady Zalasky 2026</span>
     </div>
   </footer>
 </template>
@@ -25,17 +25,17 @@
 
   .footer-container {
     font-size: 14px;
-    color: #fff;
+    color: var(--color-text);
     width: 100%;
     padding: 2rem;
     text-align: center;
   }
 
   .icon {
-    color: #fff;
+    color: var(--color-text);
   }
 
   .icon:hover {
-    color: #000;
+    color: var(--color-accent);
   }
 </style>
