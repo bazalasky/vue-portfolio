@@ -2,9 +2,8 @@
   <div class="beat-machine">
     
     <div class="instructions">
-      <p>Use the keyboard or click the buttons to play! Arrow keys are reserved for drums.</p>
-      <p>Built with vanilla Web Audio API, no libraries.</p>
-      <p></p>
+      <p class="instructions-text">Use the keyboard or click the buttons to play! Arrow keys are reserved for drums.</p>
+      <p class="instructions-text">Built with vanilla Web Audio API, no libraries.</p>
     </div>
 
     <div class="piano">
@@ -28,11 +27,35 @@
     <button class="btn btn-secondary" @click="showLabels = !showLabels">
       {{ showLabels ? 'Hide' : 'Show' }} labels
     </button>
+
+    <div class="transport">
+        <button class="btn btn-secondary" @click="togglePlay">{{ isPlaying ? '⏹ Stop' : '▶ Play' }}</button>
+        <button class="btn btn-secondary" @click="clearPattern">Clear</button>
+        <label class="bpm">BPM {{ bpm }}
+            <input type="number" min="60" max="200" v-model.number="bpm" @change="bpm = Math.min(200, Math.max(60, bpm || 120))" />
+            <input type="range" min="60" max="200" v-model.number="bpm" />
+        </label>
+        </div>
+
+        <div class="sequencer">
+        <div v-for="t in tracks" :key="t.name" class="track" :class="{ synth: t.isSynth }">
+            <span class="track-name">{{ t.name }}</span>
+            <button
+            v-for="i in NUM_STEPS"
+            :key="i"
+            class="cell"
+            :class="{ on: pattern[t.name][i - 1], playing: currentStep === i - 1 }"
+            @click="toggleStep(t.name, i - 1)"
+            />
+        </div>
+    </div>
+    <button @click="share" class="btn btn-secondary">Share</button>
+    <span v-if="shareMsg" class="share-msg">{{ shareMsg }}</span>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, reactive, onMounted, onUnmounted } from 'vue'
 import clapUrl from '@/assets/samples/clap.wav'
 import hihatUrl from '@/assets/samples/samples_hihat.wav'
 
@@ -63,6 +86,60 @@ const keys = [
     { note: 'High-C',   frequency: 523.25, keyboardKey: 'i', isSharp: false },
 ]
 
+const NUM_STEPS = 16
+const bpm = ref(120)
+const isPlaying = ref(false)
+const currentStep = ref(-1)
+
+let nextNoteTime = 0       // audioContext time of the next step
+let schedulerStep = 0      // which step (0–15) we'll schedule next
+let timerId = null
+const lookahead = 25       // ms — how often the timer wakes
+const scheduleAheadTime = 0.1  // s — how far ahead we schedule
+
+function secondsPerStep() {
+  const safe = Math.min(200, Math.max(60, bpm.value || 120))
+  return (60 / safe) / 4
+}
+
+function scheduleStep(step, time) {
+    for (const t of tracks) {
+    if (pattern[t.name][step]) t.play(time)
+    }
+  // move the visual playhead at the right moment
+  const delay = (time - audioContext.currentTime) * 1000
+  setTimeout(() => { currentStep.value = step }, Math.max(delay, 0))
+}
+
+function scheduler() {
+  // schedule every step that falls inside the lookahead window
+  while (nextNoteTime < audioContext.currentTime + scheduleAheadTime) {
+    scheduleStep(schedulerStep, nextNoteTime)
+    nextNoteTime += secondsPerStep()
+    schedulerStep = (schedulerStep + 1) % NUM_STEPS
+  }
+}
+
+function start() {
+  if (isPlaying.value) return
+  ensureAudio()
+  isPlaying.value = true
+  schedulerStep = 0
+  nextNoteTime = audioContext.currentTime + 0.05   // tiny offset so step 0 isn't late
+  timerId = setInterval(scheduler, lookahead)
+}
+
+function stop() {
+  isPlaying.value = false
+  clearInterval(timerId)
+  timerId = null
+  currentStep.value = -1
+}
+
+function togglePlay() {
+  isPlaying.value ? stop() : start()
+}
+
 function ensureAudio() {
   if (!audioContext) {
     audioContext = new AudioContext()
@@ -73,9 +150,9 @@ function ensureAudio() {
   if (audioContext.state === 'suspended') audioContext.resume()
 }
 
-function playKick() {
+function playKick(time) {
   ensureAudio()
-  const t = audioContext.currentTime
+  const t = time ?? audioContext.currentTime
   const osc = audioContext.createOscillator()
   const gain = audioContext.createGain()
 
@@ -100,16 +177,17 @@ function createNoiseSource(seconds = 0.5) {
   return source
 }
 
-function playWhiteNoise() {
+function playWhiteNoise(time) {
     ensureAudio()
+    const t = time ?? audioContext.currentTime
     const whiteNoiseSource = createNoiseSource()
     whiteNoiseSource.connect(masterGain)
-    whiteNoiseSource.start()
+    whiteNoiseSource.start(t)
 }
 
-function playSnare() {
+function playSnare(time) {
     ensureAudio()
-    const t = audioContext.currentTime
+    const t = time ?? audioContext.currentTime
     const osc = audioContext.createOscillator()
     const gain = audioContext.createGain()
     osc.type = 'triangle'
@@ -131,7 +209,7 @@ function playSnare() {
     whiteNoiseSource.connect(whiteNoiseGain);
     whiteNoiseGain.connect(filter);
 
-    whiteNoiseSource.start()
+    whiteNoiseSource.start(t)
     whiteNoiseSource.stop(t + 0.2);
 
     gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2)
@@ -141,16 +219,16 @@ function playSnare() {
     osc.stop(t + 0.2)
 }
 
-function playBuffer(buffer) {
+function playBuffer(buffer, time) {
   if (!buffer) return            // not loaded yet → no-op
   ensureAudio()
   const source = audioContext.createBufferSource()
   source.buffer = buffer
   source.connect(masterGain)     // route through master, not destination
-  source.start()
+  source.start(time ?? audioContext.currentTime)
 }
-const playClap  = () => playBuffer(clapBuffer)
-const playHiHat = () => playBuffer(hihatBuffer)
+const playClap  = (time) => playBuffer(clapBuffer, time)
+const playHiHat = (time) => playBuffer(hihatBuffer, time)
 
 async function loadSample(url) {
   const res = await fetch(url)
@@ -165,9 +243,27 @@ const drums = [
   { name: 'Hi-Hat', keyLabel: '→', play: playHiHat },
 ]
 
-function playSynth(note) {
+const tracks = [
+  ...drums,
+  ...keys.map(k => ({
+    name: k.note,
+    play: (time) => playSynth(k, time, secondsPerStep() * 0.9),
+    isSynth: true,
+  })),
+]
+
+// grid: { Kick: [false×16], Snare: [...], ... } keyed by track name
+const pattern = reactive(
+  Object.fromEntries(tracks.map(t => [t.name, Array(NUM_STEPS).fill(false)]))
+)
+
+function toggleStep(name, i) {
+  pattern[name][i] = !pattern[name][i]
+}
+
+function playSynth(note, time, duration = 0.8) {
     ensureAudio()
-    const t = audioContext.currentTime
+    const t = time ?? audioContext.currentTime
     const osc = audioContext.createOscillator()
     osc.type = 'square';
     osc.frequency.setValueAtTime(note.frequency, t)
@@ -182,21 +278,17 @@ function playSynth(note) {
     vibrato.start(t)
     vibrato.stop(t + 1)
 
-    const attackTime = 0.2;
-    const decayTime = 0.3;
-    const sustainLevel = 0.7;
-    const releaseTime = 0.2;
-
+    const attack  = Math.min(0.02, duration * 0.2)
+    const release = Math.min(0.05, duration * 0.3)
     noteGain.gain.setValueAtTime(0, t)
-    noteGain.gain.linearRampToValueAtTime(1, t + attackTime)
-    noteGain.gain.linearRampToValueAtTime(sustainLevel, t + attackTime + decayTime)
-    noteGain.gain.setValueAtTime(sustainLevel, t + 1 - releaseTime)
-    noteGain.gain.linearRampToValueAtTime(0, t + 1);
+    noteGain.gain.linearRampToValueAtTime(1, t + attack)
+    noteGain.gain.setValueAtTime(1, t + duration - release)   // hold
+    noteGain.gain.linearRampToValueAtTime(0, t + duration)    // release
 
     osc.connect(noteGain)
     noteGain.connect(masterGain)
     osc.start(t)
-    osc.stop(t + 1)
+    osc.stop(t + duration)
 }
 
 keys.forEach(key => {
@@ -217,12 +309,55 @@ function handleKeydown(e) {
   if (match) match.play()
 }
 
+function clearPattern() {
+  for (const t of tracks) pattern[t.name].fill(false)
+}
+
+function encodeBeat() {
+  const hex = tracks.map(t => {
+    const bits = pattern[t.name].reduce((acc, on, i) => acc | (on ? 1 << i : 0), 0)
+    return bits.toString(16).padStart(4, '0')
+  }).join('')
+  return `${Math.round(bpm.value)}.${hex}`
+}
+
+function decodeBeat(str) {
+  const [bpmStr, hex] = str.split('.')
+  const n = Number(bpmStr)
+  if (Number.isFinite(n)) bpm.value = Math.min(200, Math.max(60, n))
+  tracks.forEach((t, idx) => {
+    const bits = parseInt(hex.slice(idx * 4, idx * 4 + 4), 16)
+    for (let i = 0; i < NUM_STEPS; i++) {
+      pattern[t.name][i] = Boolean(bits & (1 << i))
+    }
+  })
+}
+
+const shareMsg = ref('')
+async function share() {
+  const url = `${window.location.origin}${window.location.pathname}?beat=${encodeBeat()}`
+  try {
+    await navigator.clipboard.writeText(url)
+    shareMsg.value = 'Link copied!'
+  } catch {
+    shareMsg.value = url   // fallback: show it so they can copy manually
+  }
+  setTimeout(() => { shareMsg.value = '' }, 2500)
+}
+
 onMounted(async () => {
+    const beat = new URLSearchParams(window.location.search).get('beat')
+    if (beat) {
+    try { decodeBeat(beat) } catch (e) { /* ignore malformed links */ }
+    }
   ensureAudio()
   ;[clapBuffer, hihatBuffer] = await Promise.all([loadSample(clapUrl), loadSample(hihatUrl)])
   document.addEventListener('keydown', handleKeydown)
 })
-onUnmounted(() => document.removeEventListener('keydown', handleKeydown))
+onUnmounted(() => {
+    document.removeEventListener('keydown', handleKeydown)
+    clearInterval(timerId)
+})
 </script>
 
 <style scoped>
@@ -289,5 +424,90 @@ onUnmounted(() => document.removeEventListener('keydown', handleKeydown))
 
 @media (max-width: 700px) {
   .piano { overflow-x: auto; justify-content: flex-start; }
+}
+
+.transport { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; margin-bottom: 1.5rem; }
+
+.track { display: flex; align-items: center; gap: 4px; margin-bottom: 6px; }
+
+.track-name { width: 64px; font-size: 0.85rem; color: #fff; }
+
+.cell {
+  width: 28px; height: 28px; border-radius: 4px; cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: #2c2c2c;
+}
+.cell.on { background: var(--color-accent); } 
+
+.cell.playing { outline: 2px solid #fff; outline-offset: -2px; }
+
+.cell.on.playing { filter: brightness(1.4); } 
+
+.transport input[type="number"] {
+  height: 2.5em;
+  width: 4rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  background-color: transparent;
+  border: 2px solid var(--color-accent);
+  border-radius: 0.5em;
+  box-shadow: 0 4px 0 0px rgba(0,0,0,0.2);
+  text-align: center;
+  margin-inline: 0.5rem;
+}
+
+.transport input[type="range"] { accent-color: var(--color-accent); }
+
+.transport input[type="number"]::-webkit-inner-spin-button,
+.transport input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.transport input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.share-msg {
+  margin-left: 1rem;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+.instructions-text {
+  color: #fff;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.bpm {
+    color: #fff;
+}
+
+.cell {
+  flex-shrink: 0;
+}
+
+.track-name {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.track { width: max-content; }
+
+@media (max-width: 700px) {
+  .beat-machine {
+    margin-top: 2rem;
+  }
+  .sequencer {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    }
+  .transport {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 </style>
