@@ -26,6 +26,11 @@ const router = createRouter({
       name: 'connect',
       component: () => import('../views/ConnectView.vue')
     },
+    {
+      path: '/projects/beat-machine',
+      name: 'beat-machine',
+      component: () => import('../components/BeatMachine.vue')
+    }
   ]
 })
 
