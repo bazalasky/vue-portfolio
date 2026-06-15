@@ -1,6 +1,7 @@
 <script setup>
   import { ref } from 'vue'
   const visible = ref(false);
+  const projectsOpen = ref(false);
 </script>
 
 <template>
@@ -12,7 +13,14 @@
         <div class="nav-right">
           <div class="divider"></div>
           <RouterLink class="navitem" to="/about">About</RouterLink>
-          <RouterLink class="navitem" to="/projects">Projects</RouterLink>
+          <div class="nav-dropdown">
+            <RouterLink class="navitem" to="/projects">Projects</RouterLink>
+            <div class="dropdown-menu">
+              <RouterLink class="navitem" to="/projects">All Projects</RouterLink>
+              <RouterLink class="navitem" to="/projects/beat-machine">Beat Machine</RouterLink>
+              <!-- CBB Simulator added later -->
+            </div>
+          </div>
           <RouterLink class="navitem last-nav" to="/connect">Connect</RouterLink>
           <a href="/resume.pdf" class="navitem" target="_blank" rel="noopener">My Resume</a>
           <div class="divider"></div>
@@ -31,7 +39,13 @@
           <hr>
           <RouterLink class="navitem" @click="visible = !visible" to="/about">About</RouterLink>
           <hr>
-          <RouterLink class="navitem" @click="visible = !visible" to="/projects">Projects</RouterLink>
+          <button class="navitem" @click="projectsOpen = !projectsOpen">
+            Projects {{ projectsOpen ? '▾' : '▸' }}
+          </button>
+          <div v-if="projectsOpen" class="mobile-subnav">
+            <RouterLink class="navitem" @click="visible = false" to="/projects">All Projects</RouterLink>
+            <RouterLink class="navitem" @click="visible = false" to="/projects/beat-machine">Beat Machine</RouterLink>
+          </div>
           <hr>
           <RouterLink class="navitem" @click="visible = !visible" to="/connect">Connect</RouterLink>
       </div>
@@ -59,6 +73,18 @@
     max-width: 500px;
     filter: invert(1);
   }
+
+  .nav-dropdown { position: relative; }
+
+  .dropdown-menu {
+    position: absolute; top: 100%; left: 0;
+    display: none; flex-direction: column; gap: 0.5rem;
+    background: var(--color-background-soft);
+    padding: 1rem; border-radius: 10px; z-index: 10;
+  }
+
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown:focus-within .dropdown-menu { display: flex; }
   @media (prefers-color-scheme: dark) {
     .logo { filter: none; }
   }
