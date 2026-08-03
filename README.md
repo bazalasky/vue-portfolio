@@ -1,43 +1,32 @@
-# WebAudioBeatMachine
+# Portfolio Site — bradyzalasky.com
 
-A browser-based drum machine and synthesizer built with vanilla JavaScript and the native [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) — no frameworks, no audio libraries.
+My personal portfolio site, built with Vue.js to showcase my background, experience, and projects as a software engineer.
+
+**Live site:** [bradyzalasky.com](https://www.bradyzalasky.com)
 
 ## Overview
 
-WebAudioBeatMachine generates all of its sounds in real time using low-level Web Audio primitives rather than pre-recorded samples alone. A single shared `AudioContext` drives sound synthesis and playback across the app.
+A single-page application built with Vue, JavaScript, HTML, and CSS, hosted on AWS. The site includes About, Projects, Experience, and Contact sections, with a working contact form and full light/dark mode support.
 
 ## Features
 
-- **Oscillator-based sound synthesis** — different waveform shapes (sine, square, sawtooth, triangle) are used to generate distinct drum and synth voices
-- **Pitch control** — frequency parameters shape the pitch of each sound
-- **Volume & fade envelopes** — `GainNode`s control volume and create fade-in/fade-out effects
-- **Playback scheduling** — buffering controls sound delay and timing
-- **Dual input support** — every sound can be triggered via on-screen buttons or keyboard shortcuts, both wired up through event listeners
+- **About** — background and introduction
+- **Projects** — showcases my work, including an extended, in-browser demo of the [Web Audio Beat Machine](https://github.com/bazalasky/WebAudioBeatMachine) — the site's highlight feature, letting visitors interact with the synthesizer/drum machine directly rather than just reading about it
+- **Experience** — professional history
+- **Contact** — a working contact form that submits via Axios to a custom AWS Lambda backend, rather than a static "email me" link or a third-party form service
+- **Light/Dark Mode** — toggleable theme across the entire site
+
+## Technical Highlights
+
+- **Embedded interactive demo** — rather than just linking out to the Beat Machine repo, an extended version of the project is built directly into the Projects section so visitors can play with it in-browser
+- **Custom serverless contact form** — the contact form submits via Axios to a self-built AWS Lambda function, rather than relying on a third-party form service — a small but real full-stack piece (frontend → API → backend)
+- **Light/Dark mode** — theme switching implemented across the full site
+- **Deployed on AWS** — hosted and served from AWS infrastructure rather than a simpler static host
 
 ## Tech Stack
 
-- Vanilla JavaScript (no frameworks or audio libraries)
-- Web Audio API (`AudioContext`, `OscillatorNode`, `GainNode`)
-- HTML/CSS
+Vue.js, JavaScript, HTML, CSS, Axios, AWS Lambda (contact form backend), AWS (hosting)
 
-## How It Works
+---
 
-1. An `AudioContext` is created once and shared across the app.
-2. Each sound (drum hit or synth note) is generated on demand using an `OscillatorNode` configured with a specific waveform type and frequency.
-3. The oscillator is routed through a `GainNode`, which shapes the volume envelope (attack/fade) before reaching the audio output.
-4. Playback timing is controlled to schedule when sounds start and stop.
-5. Event listeners bind both mouse clicks (on-screen buttons) and keydown events (keybinds) to the same sound-triggering logic, so either input method plays the same sounds.
-
-## Running Locally
-
-Clone the repo and open `index.html` in a browser — no build step or dependencies required.
-
-```bash
-git clone https://github.com/bazalasky/WebAudioBeatMachine.git
-cd WebAudioBeatMachine
-open index.html
-```
-
-## Why This Project
-
-Built to explore audio programming fundamentals — sound synthesis, signal routing, and real-time playback scheduling — using nothing but the browser's native audio APIs.
+*Built by [Brady Zalasky](https://bradyzalasky.com)*
